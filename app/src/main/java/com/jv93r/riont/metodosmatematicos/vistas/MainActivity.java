@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
-
+    //gola mundo
         View view = findViewById(R.id.contenido);
         devices = String.valueOf(view.getTag());
 
