@@ -1,4 +1,4 @@
-package com.jv93r.riont.metodosmatematicos;
+package com.jv93r.riont.metodosmatematicos.utilidades;
 
 /**
  * Created by riont on 27/01/16.

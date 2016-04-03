@@ -1,27 +1,36 @@
-package com.jv93r.riont.metodosmatematicos;
+package com.jv93r.riont.metodosmatematicos.vistas;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.jv93r.riont.metodosmatematicos.R;
+import com.jv93r.riont.metodosmatematicos.utilidades.CifrasSignificativas;
+
+
 /**
  * Created by riont on 27/01/16.
  */
-public class CalculadoraCifras extends Activity{
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculadora_cifras);
+public class CifrasFragment extends Fragment{
+    public CifrasFragment() {
+    }
 
-        Button btnCalcular = (Button) findViewById(R.id.btnCalcular);
-        final EditText editNum = (EditText) findViewById(R.id.editNum);
-        final EditText editCifras = (EditText) findViewById(R.id.editCifras);
-        final TextView txtResultado = (TextView) findViewById(R.id.txtResultado);
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_cifras,container,false);
+        Button btnCalcular = (Button) v.findViewById(R.id.btnCalcular);
+        final EditText editNum = (EditText) v.findViewById(R.id.editNum);
+        final EditText editCifras = (EditText) v.findViewById(R.id.editCifras);
+        final TextView txtResultado = (TextView) v.findViewById(R.id.txtResultado);
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,8 +43,9 @@ public class CalculadoraCifras extends Activity{
                     if (cifras > 0 && num > 0.0f) {
                         String truncado = cs.trucamiento(num, cifras) + "";
                         String redondeado = cs.redondear(num, cifras) + "";
-                        txtResultado.setText("Redondeado:"
-                                + redondeado + " Truncado:" + truncado);
+                        String msj = "Redondeado:"
+                                + redondeado + " Truncado:" + truncado;
+                        txtResultado.setText(msj);
                     } else {
                         Snackbar.make(v, "Datos Ingresados Invalidos", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
@@ -46,5 +56,12 @@ public class CalculadoraCifras extends Activity{
                 }
             }
         });
+        return v;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        //Siguiente instruccion da problemas en tablet
     }
 }

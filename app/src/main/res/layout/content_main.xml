@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,27 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jv93r.riont.metodosmatematicos.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".vistas.MainActivity"
+    android:id="@+id/contenido"
+    android:tag="phone">
 
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cifras Significativas"
-            android:id="@+id/btnCS" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Evaluar Polinomios"
-            android:id="@+id/btnPolinomio"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
-
-</RelativeLayout>
+</FrameLayout>

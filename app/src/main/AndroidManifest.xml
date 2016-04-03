@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".vistas.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalculadoraCifras"
+            android:name=".vistas.CifrasFragment"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".PolinomioActivity"
+            android:name=".vistas.PolinomioFragment"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
